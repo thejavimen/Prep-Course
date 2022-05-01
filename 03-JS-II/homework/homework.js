@@ -10,6 +10,8 @@ function obtenerMayor(x, y) {
   }else{
     if(x>y){
       return x;
+    }else{
+      return y;
     }
   }
 }
@@ -73,7 +75,7 @@ function colors(color) {
     case 'blue':
       return 'This is blue';
     case 'red':
-      return 'this is red';
+      return 'This is red';
     case 'green':
       return 'This is green';
     case 'orange':
@@ -146,12 +148,14 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-  if(num1>num2 && num1>0 && num1>num3){
+  if(num1>num2 && num1>0 && num1>num3 && num2>0 && num3>0){
     return 'Número 1 es mayor y positivo';
   }else if(num1<0 || num2<0 || num3<0){
     return 'Hay negativos';
   }else if(num1==0 || num2==0 || num3==0){
     return 'Error';
+  }else if(num3>num1 && num3>num2){
+    return num3+1;
   }else{
     return false;
   }
@@ -163,20 +167,22 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
-  var a=true;
+  var a=2;
   if(numero!=0 && numero!=1 && numero>0){
     for(var n=2;n<numero;n++){
       if (numero%n==0){
-        a=true;
+        a=1;
         break;
       }
 
     }
-    if(a==true){
-      return false;
-    }else{
+    if(a==2){
       return true;
+    }else{
+      return  false;
     }
+  }else{
+    return false;
   }
 }
 
