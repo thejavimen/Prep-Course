@@ -4,6 +4,18 @@ function mayuscula(nombre) {
   //La función recibe un nombre y debe devolver el mismo que recibe pero con su primer letra en mayúscula
   //ej: Recibe "mario" ----> Devuelve "Mario"
   //Tu código:
+  var mayu=nombre.char(0).toUpperCase();
+  var nString='';
+  for(var n=0;n<nombre.length;n++){
+    if (n==0){
+      nString=mayu;
+    }else{
+      nString=nString+nombre.char(n);
+    }
+
+  }
+  return nString;
+
 }
 
 function invocarCallback(cb) {
